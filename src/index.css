@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - light mode */
+    --background: 220 25% 98%;
+    --foreground: 220 15% 15%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Primary - Teal/Emerald for trust & money */
+    --primary: 168 76% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 168 76% 52%;
+
+    /* Secondary - Subtle background tones */
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 220 15% 25%;
+
+    /* Muted tones */
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - Coral for CTAs and highlights */
+    --accent: 14 90% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive/Error states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success state */
+    --success: 142 76% 42%;
+    --success-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 220 15% 88%;
+    --input: 220 15% 90%;
+    --ring: 168 76% 42%;
+
+    /* Radius */
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(168 76% 42%), hsl(168 76% 52%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 25% 98%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 20% 99%));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(220 15% 15% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(220 15% 15% / 0.12);
+    --shadow-large: 0 8px 32px hsl(220 15% 15% / 0.16);
+    --shadow-glow: 0 0 24px hsl(168 76% 52% / 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 220 20% 8%;
+    --foreground: 220 15% 95%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 168 76% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 168 76% 55%;
+
+    --secondary: 220 18% 16%;
+    --secondary-foreground: 220 15% 85%;
+
+    --muted: 220 18% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 14 90% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 220 18% 20%;
+    --input: 220 18% 22%;
+    --ring: 168 76% 45%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(168 76% 40%), hsl(168 76% 50%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 20% 8%), hsl(220 18% 10%));
+    --gradient-card: linear-gradient(135deg, hsl(220 18% 12%), hsl(220 16% 14%));
+
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.4);
+    --shadow-medium: 0 4px 16px hsl(0 0% 0% / 0.6);
+    --shadow-large: 0 8px 32px hsl(0 0% 0% / 0.8);
+    --shadow-glow: 0 0 24px hsl(168 76% 45% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+/* Tambahan biar layout full screen dan tidak kepinggir */
+#root, .dashboard-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

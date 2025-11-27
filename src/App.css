@@ -1,0 +1,95 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* =============================
+   FULL WIDTH & RESPONSIVE DASHBOARD
+============================= */
+
+.bg-gradient-subtle {
+  background: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 25% 98%));
+}
+
+/* Pastikan konten dashboard tidak terlalu kecil di layar besar */
+@media (min-width: 1600px) {
+  .max-w-\[1600px\] {
+    max-width: 1600px !important;
+  }
+}
+
+/* Tambahan responsif agar tidak terlalu mepet */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
+/* === Dashboard fullwidth helpers === */
+
+.app-fullwidth .container {
+  max-width: 100% !important;
+}
+
+#root {
+  max-width: 100% !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.app-fullwidth > header,
+.app-fullwidth > main > div {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 640px) {
+  .app-fullwidth > header,
+  .app-fullwidth > main > div {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
